@@ -1,24 +1,39 @@
 {
-  "name": "specdown-mcp-server",
+  "name": "specdown-mcp",
   "version": "1.0.0",
-  "description": "MCP server for SpecDown - access documentation via AI assistants",
+  "description": "MCP server for SpecDown — let AI assistants read, search, and edit your spec docs",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
     "specdown-mcp": "dist/index.js"
   },
+  "files": ["dist", "README.md"],
   "scripts": {
-    "build": "tsc",
+    "build": "tsup",
     "dev": "tsx src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
   },
+  "keywords": [
+    "mcp", "model-context-protocol", "markdown", "spec", "documentation",
+    "ai", "claude", "cursor", "specdown", "spec-as-code"
+  ],
+  "author": "SpecDown <hello@specdown.app>",
+  "license": "MIT",
+  "homepage": "https://specdown.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/specdown-app/mcp-server"
+  },
+  "bugs": "https://github.com/specdown-app/mcp-server/issues",
+  "engines": { "node": ">=18" },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
-    "@supabase/supabase-js": "^2.97.0"
+    "@modelcontextprotocol/sdk": "^1.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.3.0",
     "tsx": "^4.7.0",
-    "typescript": "^5.3.0",
-    "@types/node": "^20.11.0"
+    "typescript": "^5.3.0"
   }
 }
