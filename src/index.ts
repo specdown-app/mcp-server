@@ -10,7 +10,7 @@ import {
 } from '@modelcontextprotocol/sdk/types.js'
 
 const API_KEY = process.env.SPECDOWN_API_KEY ?? ''
-const API_URL = (process.env.SPECDOWN_API_URL ?? 'https://www.specdown.app').replace(/\/$/, '')
+const API_URL = (process.env.SPECDOWN_API_URL ?? 'https://specdown.app').replace(/\/$/, '')
 
 if (!API_KEY) {
   process.stderr.write(
