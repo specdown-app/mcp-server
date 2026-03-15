@@ -1,6 +1,6 @@
 {
   "name": "specdown-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MCP server for SpecDown — let AI assistants read, search, and edit your spec docs",
   "type": "module",
   "main": "dist/index.js",
