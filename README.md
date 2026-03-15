@@ -1,42 +1,57 @@
-# SpecDown MCP Server
+# SpecDown MCP Server — Markdown MCP for AI Assistants
 
 <p align="center">
   <img src="https://img.shields.io/npm/v/specdown-mcp?color=blue" alt="npm version" />
   <img src="https://img.shields.io/node/v/specdown-mcp" alt="node" />
   <img src="https://img.shields.io/npm/dm/specdown-mcp" alt="downloads" />
-  <img src="https://img.shields.io/badge/MCP-compatible-green" alt="MCP" />
+  <img src="https://img.shields.io/badge/MCP-compatible-green" alt="MCP compatible" />
+  <img src="https://img.shields.io/badge/spec--as--code-MCP-blueviolet" alt="spec as code" />
 </p>
 
-**MCP server for [SpecDown](https://specdown.app)** — let Claude, Cursor, and other AI coding assistants read, search, and edit your Markdown spec documents. Spec-as-Code, AI-ready.
+**Markdown MCP server for [SpecDown](https://specdown.app)** — give Claude, Cursor, Copilot, and other AI coding assistants direct read/write access to your Markdown spec documents.
+
+Stop copy-pasting specs into AI chat. Connect once, AI reads your Markdown docs forever — **spec-driven AI development**.
 
 **Jump to your IDE:** [Cursor](#cursor) • [Claude Desktop](#claude-desktop) • [Claude Code](#claude-code) • [Windsurf](#windsurf) • [OpenCode](#opencode) • [VS Code](#vs-code) • [Codex CLI](#codex-cli)
 
 ---
 
+## What is Markdown MCP?
+
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard that lets AI assistants connect to external tools and data sources. `specdown-mcp` is a **Markdown MCP server** that exposes your SpecDown spec documents as MCP resources — so Claude, Cursor, and other AI tools can read, search, and edit your specs directly.
+
+**Spec as Code + AI = spec-driven development:**
+```
+Engineer writes Markdown spec → AI reads spec via MCP → AI implements feature from spec
+```
+
+---
+
 ## Features
 
-- **Read & search** — list projects, browse documents, full-text search across all specs
-- **Edit & comment** — update docs, add inline comments, create new documents
-- **Spec-driven AI** — give AI full context from your Markdown specs with zero copy-paste
-- **9 tools** — `list_projects`, `list_documents`, `read_document`, `search_documents`, `read_project_context`, `list_comments`, `add_comment`, `create_document`, `update_document`
-- **Resources** — `specdown://projects`, `specdown://project/{id}`
+- **Read & search Markdown docs** — list projects, browse document tree, full-text search
+- **Edit docs** — update Markdown content, create new documents (auto-versioned)
+- **Inline comments** — add and list comments anchored to specific text
+- **Spec-driven AI** — give AI full Markdown context with zero copy-paste
+- **9 MCP tools** — complete read/write API for your spec documents
+- **MCP resources** — `specdown://projects`, `specdown://project/{id}`
 
 ---
 
 ## Prerequisites
 
-1. **[SpecDown account](https://specdown.app)** — sign up free
-2. **API key** — get yours from [Settings → API Keys](https://specdown.app/settings/api-keys)
+1. **[SpecDown account](https://specdown.app)** — free plan available
+2. **API key** — generate at [Settings → API Keys](https://specdown.app/settings/api-keys)
 
 ---
 
 ## Quick Start
 
-No install needed. Add to your IDE's MCP config and it runs automatically via `npx`.
+No install needed — `npx` runs it on demand:
 
 ```bash
-# Test it works:
-npx specdown-mcp --help
+# Verify it works
+SPECDOWN_API_KEY=your_key npx specdown-mcp
 ```
 
 ---
@@ -69,7 +84,6 @@ Replace `YOUR_API_KEY` with your key from [SpecDown Settings](https://specdown.a
 
 **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-**Linux:** `~/.config/claude/claude_desktop_config.json`
 
 ```json
 {
@@ -181,30 +195,28 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 
 ---
 
-## Environment Variables
+## Available MCP Tools
 
-| Variable | Required | Default | Description |
-|---|---|---|---|
-| `SPECDOWN_API_KEY` | **Yes** | — | Your API key from [SpecDown Settings](https://specdown.app/settings/api-keys) |
-| `SPECDOWN_API_URL` | No | `https://specdown.app` | API base URL — for self-hosted instances |
-| `SPECDOWN_SUPABASE_URL` | No | built-in | Override Supabase URL for self-hosted |
-| `SPECDOWN_SUPABASE_ANON_KEY` | No | built-in | Override Supabase anon key for self-hosted |
+| Tool | Description |
+|------|-------------|
+| `list_projects` | List all projects you have access to |
+| `list_documents` | List Markdown documents in a project |
+| `read_document` | Read full Markdown content by ID or project+path |
+| `search_documents` | Full-text search across all Markdown spec docs |
+| `read_project_context` | Get project overview: tree, README, description |
+| `list_comments` | List inline comments on a document |
+| `add_comment` | Add a comment (anchored to text or threaded reply) |
+| `create_document` | Create a new Markdown document or folder |
+| `update_document` | Replace Markdown content (auto-versioned on change) |
 
 ---
 
-## Available Tools
+## Environment Variables
 
-| Tool | Description |
-|---|---|
-| `list_projects` | List all projects you have access to |
-| `list_documents` | List documents in a project |
-| `read_document` | Read full markdown content by ID or project+path |
-| `search_documents` | Full-text search across all documents |
-| `read_project_context` | Get project overview: tree, README, description |
-| `list_comments` | List comments on a document |
-| `add_comment` | Add a comment (anchored to text or threaded reply) |
-| `create_document` | Create a new document or folder |
-| `update_document` | Replace document content (auto-versions on change) |
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `SPECDOWN_API_KEY` | **Yes** | Your API key from [SpecDown Settings](https://specdown.app/settings/api-keys) |
+| `SPECDOWN_API_URL` | No | Override API base URL (for self-hosted instances) |
 
 ---
 
@@ -214,7 +226,7 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 → Add `SPECDOWN_API_KEY` to the `env` block in your IDE's MCP config.
 
 **`Unauthorized` or `401`**
-→ Your key may be invalid or expired. Generate a new one at [Settings → API Keys](https://specdown.app/settings/api-keys).
+→ Key may be invalid or expired. Regenerate at [Settings → API Keys](https://specdown.app/settings/api-keys).
 
 **Server not appearing in IDE**
 → Restart the IDE after editing MCP config. Cursor: `Cmd+Shift+P` → "MCP: Reload Servers".
@@ -226,7 +238,7 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 
 ## Self-hosted SpecDown
 
-Point the server at your own instance:
+Point the MCP server at your own instance:
 
 ```json
 "env": {
@@ -237,12 +249,11 @@ Point the server at your own instance:
 
 ---
 
-## Links
+## Related
 
-- [SpecDown](https://specdown.app) — Spec-as-Code platform
+- [SpecDown](https://specdown.app) — Markdown editor online, Spec as Code platform
+- [specdown-cli](https://github.com/specdown-app/cli) — Markdown CLI for terminal, CI/CD, and automation
 - [Get API Key](https://specdown.app/settings/api-keys)
-- [Docs](https://specdown.app/docs)
-- [GitHub](https://github.com/specdown-app/mcp-server)
 - [Report issue](https://github.com/specdown-app/mcp-server/issues)
 
 ## License
