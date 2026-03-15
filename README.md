@@ -30,14 +30,13 @@
 
 ---
 
-## Quick Install
+## Quick Start
+
+No install needed. Add to your IDE's MCP config and it runs automatically via `npx`.
 
 ```bash
-# No install needed — run directly with npx:
-npx specdown-mcp
-
-# Or install globally:
-npm install -g specdown-mcp
+# Test it works:
+npx specdown-mcp --help
 ```
 
 ---
