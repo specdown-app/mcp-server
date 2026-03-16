@@ -1,4 +1,4 @@
-# SpecDown MCP Server — Markdown MCP for AI Assistants
+# SpecDown MCP Server — AI-Native Markdown MCP for AI Assistants
 
 <p align="center">
   <img src="https://img.shields.io/npm/v/specdown-mcp?color=blue" alt="npm version" />
@@ -8,19 +8,19 @@
   <img src="https://img.shields.io/badge/spec--as--code-MCP-blueviolet" alt="spec as code" />
 </p>
 
-**Markdown MCP server for [SpecDown](https://specdown.app)** — give Claude, Cursor, Copilot, and other AI coding assistants direct read/write access to your Markdown spec documents.
+**AI-native Markdown MCP server for [SpecDown](https://specdown.app)** — give Claude, Cursor, Copilot, and other AI coding assistants direct read/write access to your Markdown spec documents.
 
-Stop copy-pasting specs into AI chat. Connect once, AI reads your Markdown docs forever — **spec-driven AI development**.
+Stop copy-pasting specs into AI chat. Connect once, AI reads your Markdown docs forever — **AI-native spec-driven development**.
 
 **Jump to your IDE:** [Cursor](#cursor) • [Claude Desktop](#claude-desktop) • [Claude Code](#claude-code) • [Windsurf](#windsurf) • [OpenCode](#opencode) • [VS Code](#vs-code) • [Codex CLI](#codex-cli)
 
 ---
 
-## What is Markdown MCP?
+## What is AI-Native Markdown MCP?
 
-[Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard that lets AI assistants connect to external tools and data sources. `specdown-mcp` is a **Markdown MCP server** that exposes your SpecDown spec documents as MCP resources — so Claude, Cursor, and other AI tools can read, search, and edit your specs directly.
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard that lets AI assistants connect to external tools and data sources. `specdown-mcp` is an **AI-native Markdown MCP server** that exposes your SpecDown spec documents as MCP resources — so Claude, Cursor, and other AI tools can read, search, and edit your specs directly.
 
-**Spec as Code + AI = spec-driven development:**
+**AI-native Spec as Code + AI = spec-driven development:**
 ```
 Engineer writes Markdown spec → AI reads spec via MCP → AI implements feature from spec
 ```
@@ -32,7 +32,7 @@ Engineer writes Markdown spec → AI reads spec via MCP → AI implements featur
 - **Read & search Markdown docs** — list projects, browse document tree, full-text search
 - **Edit docs** — update Markdown content, create new documents (auto-versioned)
 - **Inline comments** — add and list comments anchored to specific text
-- **Spec-driven AI** — give AI full Markdown context with zero copy-paste
+- **AI-native spec-driven development** — give AI full Markdown context with zero copy-paste
 - **9 MCP tools** — complete read/write API for your spec documents
 - **MCP resources** — `specdown://projects`, `specdown://project/{id}`
 

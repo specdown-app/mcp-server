@@ -1,7 +1,7 @@
 {
   "name": "specdown-mcp",
   "version": "1.0.5",
-  "description": "MCP server for SpecDown — let AI assistants read, search, and edit your spec docs",
+  "description": "AI-native MCP server for SpecDown — let AI assistants read, search, and edit your Markdown spec docs. Spec as Code for AI-native teams.",
   "main": "dist/index.js",
   "bin": {
     "specdown-mcp": "dist/index.js"
@@ -26,7 +26,14 @@
     "claude",
     "cursor",
     "specdown",
-    "spec-as-code"
+    "spec-as-code",
+    "ai-native",
+    "ai-native-mcp",
+    "ai-operable",
+    "markdown-mcp",
+    "ai-native-documentation",
+    "spec-driven",
+    "ai-native-devtools"
   ],
   "author": "SpecDown <hello@specdown.app>",
   "license": "MIT",
