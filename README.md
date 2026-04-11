@@ -31,9 +31,10 @@ Engineer writes Markdown spec → AI reads spec via MCP → AI implements featur
 
 - **Read & search Markdown docs** — list projects, browse document tree, full-text search
 - **Edit docs** — update Markdown content, create new documents (auto-versioned)
+- **Upload images** — attach image assets and get markdown links back for documents
 - **Inline comments** — add and list comments anchored to specific text
 - **AI-native spec-driven development** — give AI full Markdown context with zero copy-paste
-- **9 MCP tools** — complete read/write API for your spec documents
+- **10 MCP tools** — complete read/write API for your spec documents
 - **MCP resources** — `specdown://projects`, `specdown://project/{id}`
 
 ---
@@ -208,6 +209,7 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 | `add_comment` | Add a comment (anchored to text or threaded reply) |
 | `create_document` | Create a new Markdown document or folder |
 | `update_document` | Replace Markdown content (auto-versioned on change) |
+| `upload_image` | Upload an image asset and return a markdown link |
 
 ---
 

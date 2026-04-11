@@ -11,6 +11,7 @@ import {
 
 const API_KEY = process.env.SPECDOWN_API_KEY ?? ''
 const API_URL = (process.env.SPECDOWN_API_URL ?? 'https://specdown.app').replace(/\/$/, '')
+const SERVER_VERSION = '1.0.6'
 
 if (!API_KEY) {
   process.stderr.write(
@@ -36,7 +37,7 @@ async function callApi(method: string, params?: Record<string, unknown>): Promis
 }
 
 const server = new Server(
-  { name: 'specdown', version: '1.0.0' },
+  { name: 'specdown', version: SERVER_VERSION },
   { capabilities: { tools: {}, resources: {} } }
 )
 
