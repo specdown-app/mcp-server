@@ -33,8 +33,9 @@ Engineer writes Markdown spec → AI reads spec via MCP → AI implements featur
 - **Edit docs** — update Markdown content, create new documents (auto-versioned)
 - **Upload images** — attach image assets and get markdown links back for documents
 - **Inline comments** — add and list comments anchored to specific text
+- **Sync planning for agents** — inspect remote snapshots, plan local-vs-remote sync, and apply remote sync operations
 - **AI-native spec-driven development** — give AI full Markdown context with zero copy-paste
-- **10 MCP tools** — complete read/write API for your spec documents
+- **13 MCP tools** — complete read/write and sync-planning API for your spec documents
 - **MCP resources** — `specdown://projects`, `specdown://project/{id}`
 
 ---
@@ -210,6 +211,9 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 | `create_document` | Create a new Markdown document or folder |
 | `update_document` | Replace Markdown content (auto-versioned on change) |
 | `upload_image` | Upload an image asset and return a markdown link |
+| `get_sync_status` | Return remote sync snapshots and summary for a project subtree |
+| `plan_sync` | Compare local snapshots with remote docs and produce a sync plan |
+| `apply_sync_plan` | Apply remote upsert/delete operations produced from a sync plan |
 
 ---
 
