@@ -203,7 +203,9 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 |------|-------------|
 | `list_projects` | List all projects you have access to |
 | `list_documents` | List Markdown documents in a project |
+| `list_project_files` | List preview-only project attachments |
 | `read_document` | Read full Markdown content by ID or project+path |
+| `read_project_file` | Read attachment metadata, text preview, embed ref, and download URL |
 | `search_documents` | Full-text search across all Markdown spec docs |
 | `read_project_context` | Get project overview: tree, README, description |
 | `list_comments` | List inline comments on a document |
@@ -211,6 +213,7 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 | `create_document` | Create a new Markdown document or folder |
 | `update_document` | Replace Markdown content (auto-versioned on change) |
 | `upload_image` | Upload an image asset and return a markdown link |
+| `upload_project_file` | Upload any project attachment and return a `[@/path]` embed reference |
 | `get_sync_status` | Return remote sync snapshots and summary for a project subtree |
 | `plan_sync` | Compare local snapshots with remote docs and produce a sync plan |
 | `apply_sync_plan` | Apply remote upsert/delete operations produced from a sync plan |
