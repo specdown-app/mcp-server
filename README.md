@@ -213,7 +213,7 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 | `create_document` | Create a new Markdown document or folder |
 | `update_document` | Replace Markdown content (auto-versioned on change) |
 | `upload_image` | Upload an image asset and return a markdown link |
-| `upload_project_file` | Upload any project attachment and return a `[@/path]` embed reference |
+| `upload_project_file` | Upload HTML/HTM as editable documents, or other attachments with a `[@/path]` embed reference |
 | `get_sync_status` | Return remote sync snapshots and summary for a project subtree |
 | `plan_sync` | Compare local snapshots with remote docs and produce a sync plan |
 | `apply_sync_plan` | Apply remote upsert/delete operations produced from a sync plan |
