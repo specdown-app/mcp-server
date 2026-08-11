@@ -11,7 +11,7 @@ import {
 
 const API_KEY = process.env.SPECDOWN_API_KEY ?? ''
 const API_URL = (process.env.SPECDOWN_API_URL ?? 'https://specdown.app').replace(/\/$/, '')
-const SERVER_VERSION = '1.0.6'
+const SERVER_VERSION = '1.0.8'
 
 if (!API_KEY) {
   process.stderr.write(

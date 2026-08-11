@@ -35,7 +35,7 @@ Engineer writes Markdown spec → AI reads spec via MCP → AI implements featur
 - **Inline comments** — add and list comments anchored to specific text
 - **Sync planning for agents** — inspect remote snapshots, plan local-vs-remote sync, and apply remote sync operations
 - **AI-native spec-driven development** — give AI full Markdown context with zero copy-paste
-- **13 MCP tools** — complete read/write and sync-planning API for your spec documents
+- **Project and share management** — create projects, safely delete document trees, and manage share links
 - **MCP resources** — `specdown://projects`, `specdown://project/{id}`
 
 ---
@@ -202,6 +202,7 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 | Tool | Description |
 |------|-------------|
 | `list_projects` | List all projects you have access to |
+| `create_project` | Create a project with a default README (plan limits apply) |
 | `list_documents` | List Markdown documents in a project |
 | `list_project_files` | List preview-only project attachments |
 | `read_document` | Read full Markdown content by ID or project+path |
@@ -212,6 +213,10 @@ SPECDOWN_API_KEY = "YOUR_API_KEY"
 | `add_comment` | Add a comment (anchored to text or threaded reply) |
 | `create_document` | Create a new Markdown document or folder |
 | `update_document` | Replace Markdown content (auto-versioned on change) |
+| `delete_document` | Soft-delete a document, folder tree, or virtual folder path |
+| `create_share_link` | Create a project or document share link (admin access required) |
+| `list_share_links` | List a project’s active share links |
+| `revoke_share_link` | Permanently revoke a share link |
 | `upload_image` | Upload an image asset and return a markdown link |
 | `upload_project_file` | Upload HTML/HTM as editable documents, or other attachments with a `[@/path]` embed reference |
 | `get_sync_status` | Return remote sync snapshots and summary for a project subtree |
